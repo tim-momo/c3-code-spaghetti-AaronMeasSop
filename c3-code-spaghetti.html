@@ -11,36 +11,46 @@
     <style>
 
         /**
-        * Composant : Carte de produit vertical
+        * Composant : Carte de produit normal
         * Variation : Nouveau produit
         *
         * Structure :
         * - .carte-normal : Conteneur principal
-        * - .carte-vertical_nom : Nom du produit
-        * - .carte-vertical_image : Image du produit
-        * - .carte-vertical_desc : Description du produit
-        * - .carte-vertical_prix : Prix affiché
-        * - .carte-vertical_badge : Badge pour démontrer un nouveau produit
+        * - .carte-normal_nom : Nom du produit
+        * - .carte-normal_image : Image du produit
+        * - .carte-normal_desc : Description du produit
+        * - .carte-normal_prix : Prix affiché
+        * - .carte-normal_badge : Badge pour montrer un nouveau produit
+        * - .button-panier : Bouton pour ajouter au panier
+        *
+        *
+        * Composant : Carte de produit mini
+        *
+        * Structure : 
+        * - .carte-mini : Conteneur principal
+        * - .carte-mini_nom : Nom du produit
+        * - .carte-mini_image : Image du produit
+        * - .carte-mini_desc : Description du produit
+        * - .button-panier-mini : Mini bouton pour ajouter au panier
         */
-
+        
         :root {
             --primary-bg-color: #ffffff;
             --prix-color: #27ae60;
             --nom-color: #2c3e50;
-            --border-desc-color: #7f8c8d;
+            --border-color: #b6b6be;
+            --desc-color: #7f8c8d;
             --button-color: #3498db;
             --button-hover: #2980b9;
             --nouveau-color: #e74c3c;
         }
-
         body{
             display: flex;
             gap: 20px;
             align-items: flex-start;
             font-family: "Poppins", sans-serif;
         }
-
-        .carte_normal {
+        .carte-normal {
             width: 300px;
             border: 1px solid var(--border-color);
             padding: 20px;
@@ -48,46 +58,39 @@
             background: var(--primary-bg-color);
             border-radius: 8px;
         }
-        
         .carte-normal_nouveau {
             width: 300px;
-            border: 1px solid var(--border-color);
+            border: 3px solid var(--nouveau-color);
             padding: 20px;
             margin: 20px;
             background: var(--primary-bg-color);
             border-radius: 8px;
-            border: 3px solid var(--nouveau-color);
-            position: relative
+            position: relative;
         }
-        
         .carte-normal_nom { 
             font-size: 24px;
             color: var(--nom-color);
             margin: 15px 0 10px 0;
             font-weight: 600;
         }
-
         .carte-normal_image {
             width: 100%;
             height: 200px;
             object-fit: cover;
             border-radius: 4px; 
         }
-
         .carte-normal_desc {
             font-size: 14px;
-            color: var(--border-desc-color);
+            color: var(--desc-color);
             margin: 0 0 15px 0;
             line-height: 1.6;
         }
-
         .carte-normal_prix {
             font-size: 20px;
             color: var(--prix-color);
             font-weight: bold;
             margin: 0 0 15px 0;
         }
-        
         .carte-normal_badge {
             display: inline-block;
             background: var(--nouveau-color);
@@ -99,7 +102,6 @@
             top: 10px;
             right: 10px;
         }
-
         .button-panier {
             background: var(--button-color);
             color: white;
@@ -110,16 +112,12 @@
             font-size: 14px;
             width: 100%;
          }
-
         .button-panier:hover {
             background: var(--button-hover);
         }
-        
-    
-
-        .carte-horizontal {
+        .carte-mini {
             width: 300px;
-            border: 1px solid #b6b6be;
+            border: 1px solid var(--border-color);
             padding: 20px;
             margin: 20px;
             background: white;
@@ -127,28 +125,24 @@
             display: flex;
             gap: 15px;
         }
-        
-        .carte-horizontal_name {
+        .carte-mini_nom {
             font-size: 14px;
-            color: #2c3e50;
+            color: var(--nom-color);
             margin: 0 0 8px 0;
         }
-
-        .carte-horizontal_image {
+        .carte-mini_image {
             width: 100px;
             height: 100px;
             object-fit: cover;
             border-radius: 4px;
         }
-
-        .carte-horizontal_desc {
+        .carte-mini_desc {
             font-size: 10px;
-            color: #7f8c8d;
+            color: var(--desc-color);
             margin: 0 0 17px 0;
         }
-
         .button-panier-mini { /* A FIXER */
-            background: #3498db;
+            background: var(--button-color);
             color: white;
             border: none;
             padding: 12px 24px;
@@ -157,41 +151,38 @@
             font-size: 10px;
             width: 100%;
         }
-
-        .carte-horizontal_prix {
-            font-size: 14px;
-            color: #7f8c8d;
-            margin: 0 0 15px 0;
-            line-height: 1.6;
+        .button-panier-mini:hover {
+            background: var(--button-hover);
         }
 
-        
 
     </style>
 </head>
 <body>
-    <div class="carte-vertical"> <!-- Incertain de si je devrais toujours utiliser le lien pour l'image? -->                                                    
-        <img class="carte-vertical_image" src="https://static.photos/technology/320x240/37" alt="Produit 1">
-        <h2 class="carte-vertical_name">Nom du Produit 1</h2>
-        <p class="carte-vertical_desc">Description courte du produit qui donne envie d'acheter.</p>
-        <div class="carte-vertical_prix">1149,99 $</div>
+    <div class="carte-normal"> <!-- Incertain de si je devrais toujours utiliser le lien pour l'image? -->                                                    
+        <img class="carte-normal_image" src="https://static.photos/technology/320x240/37" alt="Produit 1">
+        <h2 class="carte-normal_nom">Nom du Produit 1</h2>
+        <p class="carte-normal_desc">Description courte du produit qui donne envie d'acheter.</p>
+        <div class="carte-normal_prix">1149,99 $</div>
         <button class="button-panier">Ajouter au panier</button>
     </div>
 
 
-    <div class="carte-horizontal">
-        <img class="carte-horizontal_image" src="https://static.photos/technology/100x100/130" alt="Produit 2">
-        <h3 class="carte-horizontal_name">Nom du produit mini 2</h3>
-        <p class="carte-horizontal_desc">Description rapide</p>
-        <button class="button-panier-mini">Ajouter au panier</button>
+    <div class="carte-mini">
+        <img class="carte-mini_image" src="https://static.photos/technology/100x100/130" alt="Produit 2">
+        <div>
+            <h3 class="carte-mini_nom">Nom du produit mini 2</h3>
+            <p class="carte-mini_desc">Description rapide</p>
+            <button class="button-panier-mini">Ajouter au panier</button>
+        </div>
     </div>
 
-    <div class="carte-vertical_nouveau">
-        <span class="carte-vertical_badge"></span>
-        <img class="carte-vertical_image" src="https://static.photos/gaming/320x240/30" alt="Produit 3">
-        <h2 class="carte-vertical_name">Nom du Produit 3</h2>
-        <p class="carte-vertical_desc">Description courte du produit qui donne envie d'acheter.</p>
-        <div class="carte-vertical_prix">1120,99 $</div>
+    <div class="carte-normal_nouveau">
+        <span class="carte-normal_badge">NOUVEAU</span>
+        <img class="carte-normal_image" src="https://static.photos/gaming/320x240/30" alt="Produit 3">
+        <h2 class="carte-normal_nom">Nom du Produit 3</h2>
+        <p class="carte-normal_desc">Description courte du produit qui donne envie d'acheter.</p>
+        <div class="carte-normal_prix">1120,99 $</div>
         <button class="button-panier">Ajouter au panier</button>
     </div>
 </body>
